@@ -25,9 +25,14 @@ find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -k 3
 echo ""
 echo "Setgid files:"
 echo "============="
-find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 6
+find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 6  #sort -k6 sorts by their group
+#it will find and show the setgid files in a second listing
+#/dev/null then we will not  get any errors for inaccessible directories and files
 echo ""
 echo "The 10 largest regular files in the system:"
 echo "============="
-find / -type f -exec ls -alh 2>/dev/null --block-size=M {} \; | sort -hr -k5 | head -n 10 | awk '{print $5, $3, $9}'
+find / -type f -exec ls -alh --block-size=M {} \; 2>/dev/null | sort -hr -k5 | head -n 10 | awk '{print $5, $3, $9}' #block size converts size to MBytes, error redirect to /dev/null will garbage errors, {} \; will execute ls command on each findings
+#short k5 on 5th column reversely
+#outputs 10 files on the top
+#awk customly display column in order file name, owner, and size
 echo ""
