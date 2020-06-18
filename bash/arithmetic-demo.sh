@@ -7,13 +7,13 @@
 #    the sum of the 3 numbers with a label
 #    the product of the 3 numbers with a label
 
-read -p "Input 1 ? " firstnum
-read -p "Input 2 ? " secondnum
-read -p "Input 3 ? " thirdnum
-sum=$((firstnum + secondnum + thirdnum))
-product=$((firstnum * secondnum * thirdnum))
+read -p "Input1? " firstnumber #we used read commands to get 3 numbers from the user.
+read -p "Input2? " secondnumber
+read -p "Input3? " thirdnumber
+sum=$((firstnumber + secondnumber + thirdnumber)) # Adding the sum of the 3 numbers into variable
+product=$((firstnumber * secondnumber * thirdnumber)) # Adding the product of the 3 numbers into variable
 
 cat <<EOF
-The sum of $firstnum , $secondnum and $thirdnum numbers are $sum .
-The product of $firstnum , $secondnum and $thirdnum numbers are $product .
+The sum of $firstnumber , $secondnumber and $thirdnumber numbers are $sum .
+The product of $firstnumber , $secondnumber and $thirdnumber numbers are $product .
 EOF
