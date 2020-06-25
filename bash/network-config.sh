@@ -32,8 +32,8 @@
 # this command is ugly done this way, so generating the output data into variables is recommended to make the script more readable.
 # e.g. 
 #   interface_name=$(ip a |awk '/: e/{gsub(/:/,"");print $2}')
-
-myhostname=$(hostname) # Will clean up the script by moving the command output to separate variables
+# Will clean up the script by moving the command output to separate variables
+myhostname=$(hostname) 
 interface_name=$(ip a |awk '/: e/{gsub(/:/,"");print $2}') #Will find interface names
 lan_address=$(ip a s $interface_name|awk '/inet /{gsub(/\/.*/,"");print $2}') # Will find a lan address
 lan_hostname=$(getent hosts $(ip a s $interface_name)|awk '/inet /{gsub(/\/.*/,"");print $2}' | awk '{print $2}') #Will find lan hostname with getent hosts and variable $lan_address
