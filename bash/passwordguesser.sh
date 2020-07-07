@@ -9,42 +9,7 @@
 # TASK 3: Improve it by giving them 5 tries to get it right before failing
 #           *** Do not use the exit command, and do not use a loop (e.g. while or for)
 
-referenceString="Password" #Will create a variable to store password
-read -s -p "Insert the password:" myString #Get userinput silently for password and saving into $myString
-echo
-if [ $myString = $referenceString ]; then #if-else condition 5 times to check input is valid or not by comparing $referenceString.
-  echo "Login Successful."
-  echo
-else
-  echo "Incorrect username or password!!"
-  read -s -p "Guess the password:" myString
-if [ $myString = $referenceString ]; then
-  echo "Login Successful."
-  echo
-else
-  echo "Incorrect username or password!!"
-  read -s -p "Guess the password:" myString
-if [ $myString = $referenceString ]; then
-  echo "Login Successful."
-  echo
-else
-  echo "Incorrect username or password!!"
-  read -s -p "Guess the password:" myString
-if [ $myString = $referenceString ]; then
-  echo "Login Successful."
-  echo
-else
-  echo
-  echo "Incorrect username or password!!"
-  read -s -p "Guess the password:" myString
-if [ $myString = $referenceString ]; then
-  echo "Login Successful."
-  echo
-else
-  echo
-  echo "Bye... No input permitted."
-fi
-fi
-fi
-fi
-fi
+myString="TestString"
+referenceString="password"
+
+[ $myString = $referenceString ] && echo "Correct!" || echo "Incorrect."
