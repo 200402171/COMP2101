@@ -1,1 +1,1 @@
-# COMP2101
+# Linux Server Side Scripting
